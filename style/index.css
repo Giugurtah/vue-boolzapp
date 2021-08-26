@@ -1,0 +1,61 @@
+/* General properties */
+* {
+    font-size: 15px;
+}
+
+body {
+    height: 100vh;
+    background: linear-gradient(
+        rgb(21, 149, 136) 15%, rgb(218, 219, 215) 15%);
+}
+
+/* color properties */
+.red {
+    background-color: red;
+}
+.blue {
+    background-color: blue;
+}
+
+.white {
+    background-color: white;
+}
+.base_color {
+    background-color: rgb(234, 234, 234);
+}
+
+.light_blue {
+    background-color: rgb(145, 218, 250);
+}
+
+/* Sizing properties */
+.rounded_border {
+    border-radius: 50%;
+}
+
+
+
+/* Size properties */
+.h90 {
+    height: 90vh;
+}
+
+/*User_option properties*/
+.user_img {
+    height: 50px;
+}
+
+.user_option i {
+    color: rgb(177, 177, 177);
+    font-size: 20px;
+
+}
+
+/* Notification properties */
+.notification i {
+    color: rgb(145, 218, 250);
+    font-size: 20px;
+}
+
+
+
