@@ -13,49 +13,58 @@
     <!-- STYLE -->
     <link rel="stylesheet" href="./style/index.css">
     <title>Bool-zapp</title>
+    <!-- DATA -->
+    <script src="./js/users.js"></script>
 </head>
 <body>
-    <div class="container position-absolute top-50 start-50 translate-middle h90">
-        <div class="row">
-            <div class="col-4 d-flex flex-column p-0">
-                <!-- Sectione dedicata all'utente e alla modifica delle impostazioni-->
+    <div class="contenitore position-absolute top-50 start-50 translate-middle green" id="app">
+        <div class="row h-100">
+            <div class="col-4">
+                <!-- Section dedicata all'utente e alla modifica delle impostazioni-->
                 <section class="user_option d-flex justify-content-between base_color">
-                    <div class="d-flex align-items-center p-2">
-                        <img src="./img/avatar_io.jpg" alt="user img" class="user_img me-2 rounded_border">
+                    <div class="d-flex align-items-center">
+                        <img v-bind:src="'./img/avatar' + user.avatar + '.jpg'" alt="user img" class="user_img mx-2 '
+                        rounded-circle">
                         Nome Utente
                     </div>
-                    <div class="d-flex align-items-center mx-3">
+                    <div class="d-flex align-items-center mx-2">
                         <i class="fas fa-circle-notch m-2"></i>
                         <i class="fas fa-comment-alt m-2"></i>
                         <i class="fas fa-ellipsis-v m-2"></i>
                     </div>
                 </section>
                 <!-- Section di notifiche -->
-                <section class="notification p-3 d-flex align-items-center light_blue">
-                    <div class="d-inline-block p-2 white rounded_border">
+                <section class="notification px-3 d-flex align-items-center light_blue">
+                    <div class="d-inline-block p-2 white rounded-circle">
                         <i class="fas fa-bell-slash align-middle text-center"></i>
                     </div>
-                    <div class="d-inline-block ms-2 lh-sm">
+                    <div class="d-inline-block mx-2 lh-sm">
                         <div class="">Ricevi notifiche di nuovi messaggi</div>
                         <div class="font_small color_gray text-decoration-underline">Attiva notifiche desktop</div>
                     </div>
                 </section>
                 <!-- Section di ricerca-->
-                <section class="search p-1 base_color">
+                <section class="search base_color d-flex align-items-center px-1">
                     <div class="input-group">
                         <span class="input-group-text white">
                             <i class="fas fa-search mx-3"></i>
                         </span>
-                        <input type="text" class="form-control font_small" placeholder="Cerca o inizia una nuova chat" aria-label="Username" aria-describedby="basic-addon1">
+                        <input v-model="searchedUser" type="text" class="form-control font_small" placeholder="Cerca o inizia una nuova chat" aria-label="Username" aria-describedby="basic-addon1">
                     </div>
                 </section>
                 <!-- Section dedicata alla lista contatti e alle chat aperte -->
-                <section class="contacts flex-grow-1 blue">
-                    
+                <section class="contacts overflow-scroll blue">
+                    <div v-for="contact in search(searchedUser)" class="d-flex align-items-center p-2 border-top white hover_gray">
+                        <img v-bind:src="'./img/avatar' + contact.avatar + '.jpg'" alt="user img" class="user_img mx-2 '
+                        rounded-circle">
+                        {{ contact.name }}
+                    </div>
                 </section>
             </div>
-            <div class="col-8 blue"></div>
+            <div class="col-8"></div>
         </div>
     </div>
+    <!-- SCRIPT -->
+    <script src="./js/index.js"></script>
 </body>
 </html>
