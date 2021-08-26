@@ -2,40 +2,33 @@
 * {
     font-size: 15px;
 }
-
 body {
     height: 100vh;
     background: linear-gradient(
-        rgb(21, 149, 136) 15%, rgb(218, 219, 215) 15%);
+        rgb(21, 149, 136) 20%, rgb(218, 219, 215) 20%);
 }
 
 /* color properties */
-.red {
-    background-color: red;
-}
-.blue {
-    background-color: blue;
-}
-
-.white {
-    background-color: white;
-}
 .base_color {
     background-color: rgb(234, 234, 234);
 }
-
+.white {
+    background-color: white;
+}
 .light_blue {
     background-color: rgb(145, 218, 250);
+}
+.color_gray {
+    color: rgb(120, 120, 120)
 }
 
 /* Sizing properties */
 .rounded_border {
     border-radius: 50%;
 }
-
-
-
-/* Size properties */
+.font_small {
+    font-size: 12px;
+}
 .h90 {
     height: 90vh;
 }
@@ -44,11 +37,9 @@ body {
 .user_img {
     height: 50px;
 }
-
 .user_option i {
     color: rgb(177, 177, 177);
     font-size: 20px;
-
 }
 
 /* Notification properties */
@@ -57,5 +48,31 @@ body {
     font-size: 20px;
 }
 
+/* Search properties */
+.search i {
+    color: rgb(177, 177, 177);
+    font-size: 15px;
+}
+.search .input-group-text, .search .form-control  {
+    border: none;
+    border-radius: 0%;
+}
+
+/* Contacts styling */
 
 
+
+
+
+
+
+
+
+
+
+.red {
+    background-color: red;
+}
+.blue {
+    background-color: blue;
+}
