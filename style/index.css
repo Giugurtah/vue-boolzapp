@@ -1,3 +1,5 @@
+/** CSS stylesheet che contiene solo proprietà di colore e dimensione */
+
 /* color properties */
 .base_color {
     background-color: rgb(234, 234, 234);
@@ -14,7 +16,7 @@
 .color_gray {
     color: rgb(120, 120, 120)
 }
-.interaction_gray:hover, .interaction_gray:focus{
+.interaction_gray:hover {
     background-color: rgb( 235, 235, 235);
 }
 
@@ -59,7 +61,6 @@ body {
 .notification .icon_div {
     height: 40px;
     width: 40px;
-    text-align: center;
 }
 .notification i {
     color: rgb(145, 218, 250);
@@ -73,10 +74,6 @@ body {
 .search i {
     color: rgb(177, 177, 177);
     font-size: 15px;
-}
-.search .input-group-text, .search .form-control  {
-    border: none;
-    border-radius: 0%;
 }
 
 /* Contacts properties */

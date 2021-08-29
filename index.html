@@ -20,7 +20,7 @@
     <script src="./js/data.js"></script>
 </head>
 <body>
-    <div class="contenitore position-absolute top-50 start-50 translate-middle " id="app">
+    <div class="contenitore position-absolute top-50 start-50 translate-middle" id="app">
         <div class="row h-100">
             <!-- COLONNA DI NAVIGAZIONE -->
             <div class="col-4 p-0 border-end border-2">
@@ -31,7 +31,7 @@
                         rounded-circle">
                         <span>Nome Utente</span>
                     </div>
-                    <div class="d-flex align-items-center mx-2">
+                    <div class="d-flex align-items-center me-2">
                         <i class="fas fa-circle-notch m-2"></i>
                         <i class="fas fa-comment-alt m-2"></i>
                         <i class="fas fa-ellipsis-v m-2"></i>
@@ -39,7 +39,7 @@
                 </section>
                 <!-- Section di notifiche -->
                 <section class="notification px-3 d-flex align-items-center light_blue">
-                    <div class="icon_div d-inline-block p-2 white rounded-circle">
+                    <div class="icon_div text-center d-inline-block p-2 white rounded-circle">
                         <i v-if="IsNotificationActive == true" class="fas fa-bell align-middle text-center"></i>
                         <i v-else class="fas fa-bell-slash align-middle text-center"></i>
                     </div>
@@ -54,10 +54,10 @@
                 <!-- Section di ricerca-->
                 <section class="search base_color d-flex align-items-center px-1">
                     <div class="input-group">
-                        <span class="input-group-text white">
+                        <span class="input-group-text border-0 rounded-0 white">
                             <i class="fas fa-search mx-3"></i>
                         </span>
-                        <input v-model="searchedUser" type="text" class="form-control font_small" placeholder="Cerca o inizia una nuova chat" aria-label="Username" aria-describedby="basic-addon1">
+                        <input v-model="searchedUser" type="text" class="form-control border-0 rounded-0 font_small" placeholder="Cerca o inizia una nuova chat">
                     </div>
                 </section>
                 <!-- Section dedicata alla lista contatti e alle chat aperte -->
@@ -87,7 +87,7 @@
                         <i class="fas fa-ellipsis-v m-2"></i>
                     </div>
                 </section>
-                <!-- Section dedicata alla visualizzazione della chat -->
+                <!-- Section dedicata alla visualizzazione della chat --> 
                 <section class="chat_display overflow-scroll p-5" id="chat_display_id">
                     <div v-for="message in selectedContact.messages"  class="row">  
                         <div v-if="message.status == 'sent'" class="col-auto ms-auto">
