@@ -2,6 +2,9 @@
 .base_color {
     background-color: rgb(234, 234, 234);
 }
+.beige {
+    background-color: rgb(243, 238, 234);
+}
 .white {
     background-color: white;
 }
@@ -11,7 +14,7 @@
 .color_gray {
     color: rgb(120, 120, 120)
 }
-.hover_gray:hover {
+.interaction_gray:hover, .interaction_gray:focus{
     background-color: rgb( 235, 235, 235);
 }
 
@@ -34,14 +37,14 @@ body {
     max-width: 1100px;
 }
 
-/*User_option properties*/
-.user_option {
+/* User_display properties */
+.user_display {
     height: 70px;
 }
 .user_img {
     height: 50px;
 }
-.user_option i {
+.user_display i {
     color: rgb(177, 177, 177);
     font-size: 20px;
 }
@@ -68,29 +71,30 @@ body {
     border-radius: 0%;
 }
 
-/* Contacts styling */
+/* Contacts properties */
 .contacts {
     height: 400px;
 }
 
-
-
-
-
-
-
-
-
-
-.red {
-    background-color: red;
+/* Chat_display properties */
+.chat_display {
+    height: 450px;
+    background-image: url("../img/mine.jpg");
 }
-.blue {
-    background-color: blue;
+
+/* Messages properties */
+.messages {
+    height: calc(100% - 520px);
 }
-.green {
-    background-color: green;
+.messages i {
+    color: rgb(107, 115, 118);
+    font-size: 20px;
 }
+
+
+
+
+
 
 
 

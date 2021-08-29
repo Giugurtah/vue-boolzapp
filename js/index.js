@@ -1,17 +1,17 @@
 var app = new Vue({
     el: '#app',
     data: {
-      user,
-      contacts,
+      data,
       searchedUser: "",
+      selectedContact: data.contacts[0],
     },
     methods: {
       search(string) {
         if(string === "") {
-          return contacts;
+          return data.contacts;
         } else {
           var searchedContacts = [];
-          contacts.forEach(element => { 
+          data.contacts.forEach(element => { 
             if (element.name.toLowerCase().includes(string.toLowerCase())) {
               searchedContacts.push(element);
             }
