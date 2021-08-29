@@ -10,6 +10,9 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <!-- FONT-AWESOME -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- DAYJS -->
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.10.6/dayjs.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.10.6/plugin/customParseFormat.js"></script>
     <!-- STYLE -->
     <link rel="stylesheet" href="./style/index.css">
     <title>Bool-zapp</title>
@@ -36,12 +39,16 @@
                 </section>
                 <!-- Section di notifiche -->
                 <section class="notification px-3 d-flex align-items-center light_blue">
-                    <div class="d-inline-block p-2 white rounded-circle">
-                        <i class="fas fa-bell-slash align-middle text-center"></i>
+                    <div class="icon_div d-inline-block p-2 white rounded-circle">
+                        <i v-if="IsNotificationActive == true" class="fas fa-bell align-middle text-center"></i>
+                        <i v-else class="fas fa-bell-slash align-middle text-center"></i>
                     </div>
                     <div class="d-inline-block mx-2 lh-sm">
                         <div class="">Ricevi notifiche di nuovi messaggi</div>
-                        <div class="font_small color_gray text-decoration-underline">Attiva notifiche desktop</div>
+                        <div class="color_gray text-decoration-underline">
+                            <div v-on:click="IsNotificationActive = false" v-if="IsNotificationActive == true" class="font_small">Disattiva notifiche desktop</div>
+                            <div v-on:click="IsNotificationActive = true" v-else class="font_small">Attiva notifiche desktop</div>
+                        </div>
                     </div>
                 </section>
                 <!-- Section di ricerca-->
@@ -81,21 +88,19 @@
                     </div>
                 </section>
                 <!-- Section dedicata alla visualizzazione della chat -->
-                <section class="chat_display p-5">
-                    <div v-for="message in selectedContact.messages" class="row">  
+                <section class="chat_display overflow-scroll p-5" id="chat_display_id">
+                    <div v-for="message in selectedContact.messages"  class="row">  
                         <div v-if="message.status == 'sent'" class="col-auto ms-auto">
                             <div class="sent p-2 rounded-3 mb-3">
                                 {{ message.message }}
                                 <div class="message_dlh-sm ate font_smaller color_gray text-end"> {{ message.date }} </div>
                             </div>
-                            <div class="w-100 d-none d-md-block"></div>
                         </div>
                         <div v-else class="col-auto">
                             <div class="received p-2 rounded-3 mb-3">
                                 {{ message.message }}
                                 <div class="message_date lh-sm font_smaller color_gray text-end"> {{ message.date }} </div>
                             </div>
-                            <div class="w-100 d-none d-md-block"></div>
                         </div>
                     </div>
                 </section>
@@ -104,7 +109,7 @@
                     <div class="row h-100 align-items-center">
                         <div class="col-auto"><i class="far fa-smile ms-4"></i></div>
                         <div class="col">
-                            <input class="form-control form-control-lg font_small color_gray lh-lg border-0" type="text" placeholder="Scrivi un messaggio" aria-label=".form-control-lg">
+                            <input v-model="sentMessage" v-on:keyup.enter="sendMessage(sentMessage)" class="form-control form-control-lg font_small color_gray lh-lg border-0" type="text" placeholder="Scrivi un messaggio" aria-label=".form-control-lg">
                         </div>
                         <div class="col-auto"><i class="fas fa-microphone me-4"></i></div>
                     </div>
@@ -115,4 +120,3 @@
     <!-- SCRIPT -->
     <script src="./js/index.js"></script>
 </body>
-

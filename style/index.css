@@ -56,6 +56,11 @@ body {
 .notification {
     height: calc(100% - 510px);
 }
+.notification .icon_div {
+    height: 40px;
+    width: 40px;
+    text-align: center;
+}
 .notification i {
     color: rgb(145, 218, 250);
     font-size: 20px;
@@ -86,12 +91,12 @@ body {
 }
 .sent {
     max-width: 320px;
-    min-width: 270px;
+    
     background-color: rgb(214, 248, 188);
 }
 .received {
     max-width: 320px;
-    min-width: 270px;
+    
     background-color: rgb(255, 255, 255);
 }
 
