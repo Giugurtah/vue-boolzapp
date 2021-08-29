@@ -25,6 +25,9 @@
 .font_small {
     font-size: 12px;
 }
+.font_smaller {
+    font-size: 10px;
+}
   
 /* Body e contenitore properties */
 body {
@@ -80,6 +83,16 @@ body {
 .chat_display {
     height: 450px;
     background-image: url("../img/mine.jpg");
+}
+.sent {
+    max-width: 320px;
+    min-width: 270px;
+    background-color: rgb(214, 248, 188);
+}
+.received {
+    max-width: 320px;
+    min-width: 270px;
+    background-color: rgb(255, 255, 255);
 }
 
 /* Messages properties */

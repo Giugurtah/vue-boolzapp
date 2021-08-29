@@ -81,8 +81,23 @@
                     </div>
                 </section>
                 <!-- Section dedicata alla visualizzazione della chat -->
-                <section class="chat_display">
-
+                <section class="chat_display p-5">
+                    <div v-for="message in selectedContact.messages" class="row">  
+                        <div v-if="message.status == 'sent'" class="col-auto ms-auto">
+                            <div class="sent p-2 rounded-3 mb-3">
+                                {{ message.message }}
+                                <div class="message_dlh-sm ate font_smaller color_gray text-end"> {{ message.date }} </div>
+                            </div>
+                            <div class="w-100 d-none d-md-block"></div>
+                        </div>
+                        <div v-else class="col-auto">
+                            <div class="received p-2 rounded-3 mb-3">
+                                {{ message.message }}
+                                <div class="message_date lh-sm font_smaller color_gray text-end"> {{ message.date }} </div>
+                            </div>
+                            <div class="w-100 d-none d-md-block"></div>
+                        </div>
+                    </div>
                 </section>
                 <!-- Section dedicata alla scrittura e all'invio di messaggi -->
                 <section class="messages beige">
