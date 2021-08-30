@@ -1,5 +1,8 @@
-/** CSS stylesheet che contiene solo proprietà di colore e dimensione */
-
+/** Porzione dello stylesheet che contiene solo proprietà di colore e dimensione */
+/* Geberal properties */
+.zindex-1 {
+    z-index: 1;
+}
 /* color properties */
 .base_color {
     background-color: rgb(234, 234, 234);
@@ -13,7 +16,7 @@
 .light_blue {
     background-color: rgb(145, 218, 250);
 }
-.color_gray {
+.color_gray, .color_gray:hover {
     color: rgb(120, 120, 120)
 }
 .interaction_gray:hover {
@@ -86,15 +89,8 @@ body {
     height: 450px;
     background-image: url("../img/mine.jpg");
 }
-.sent {
+.message {
     max-width: 320px;
-    
-    background-color: rgb(214, 248, 188);
-}
-.received {
-    max-width: 320px;
-    
-    background-color: rgb(255, 255, 255);
 }
 
 /* Messages properties */
@@ -106,6 +102,24 @@ body {
     font-size: 20px;
 }
 
+/** Porzione dello stylesheet che contine le modifiche alle proprietà già presenti degli elementi bootstrap */
+.button_reset {
+    display: none;
+}
+.message:hover .button_reset {
+    display: initial;
+}
+.button_reset, .button_reset:hover, .button_reset:focus, .button_reset:active, .button_reset:active:focus {
+    color: gray;
+    box-shadow: 0px 0px 0px;
+    border-width: 0;
+} 
+.sent_color, .sent_color:hover, .sent_color:focus, .sent_color:active, .sent_color:active:focus {
+    background-color: rgb(214, 248, 188);
+}
+.received_color, .received_color:hover, .received_color:focus, .received_color:active, .received_color:active:focus{
+    background-color: rgb(255, 255, 255);
+}
 
 
 

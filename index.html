@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- BOOTSTRAP -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
     <!-- VUE -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <!-- FONT-AWESOME -->
@@ -89,15 +90,16 @@
                 </section>
                 <!-- Section dedicata alla visualizzazione della chat --> 
                 <section class="chat_display overflow-scroll p-5" id="chat_display_id">
-                    <div v-for="message in selectedContact.messages"  class="row">  
-                        <div v-if="message.status == 'sent'" class="col-auto ms-auto">
-                            <div class="sent p-2 rounded-3 mb-3">
-                                {{ message.message }}
-                                <div class="message_dlh-sm ate font_smaller color_gray text-end"> {{ message.date }} </div>
-                            </div>
-                        </div>
-                        <div v-else class="col-auto">
-                            <div class="received p-2 rounded-3 mb-3">
+                    <div v-for="(message, index) in selectedContact.messages"  class="row">  
+                        <div class="col-auto" :class="message.status == 'sent' ? 'ms-auto' : ''">
+                            <div class="message p-2 rounded-3 mb-3 position-relative" :class="message.status == 'sent' ? 'sent_color' : 'received_color'">
+                                <div class="dropdown position-absolute top-0 end-0">
+                                    <button class="btn btn-secondary dropdown-toggle button_reset" :class="message.status == 'sent' ? 'sent_color' : 'received_color'" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false"></button>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                      <li><a class="dropdown-item" href="#">Evidenzia messaggio</a></li>
+                                      <li><a @click="deleteMessage(index)" class="dropdown-item" href="#">Cancella messaggio</a></li>
+                                    </ul>
+                                  </div>
                                 {{ message.message }}
                                 <div class="message_date lh-sm font_smaller color_gray text-end"> {{ message.date }} </div>
                             </div>

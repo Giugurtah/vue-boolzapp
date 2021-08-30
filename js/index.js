@@ -56,8 +56,11 @@ var app = new Vue({
             notificationSound.play();
           }
         }, 1000);
-
       },
+      // Funzione che cancella un messaggio dala lista messaggi
+      deleteMessage(index) {
+        this.selectedContact.messages.splice(index, 1);
+      }
     }
 })
 
