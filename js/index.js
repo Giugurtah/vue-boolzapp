@@ -11,6 +11,7 @@ var app = new Vue({
       searchedUser: "",
       selectedContact: data.contacts[0],
       sentMessage: "",
+      selectedMessage: undefined,
       // Serie di risposte in aggiunta al semplice "ok" richiesto dalla traccia
       randomAnswers: ["Ok", "Perfetto", "Mi dispiace molto :(", "Hahaha molto divertente", "Preferirei di no"],
     },
@@ -60,7 +61,9 @@ var app = new Vue({
       // Funzione che cancella un messaggio dala lista messaggi
       deleteMessage(index) {
         this.selectedContact.messages.splice(index, 1);
-      }
+      },
+      //Funzione che controlla se un messaggio è stato selezionato o no
+      
     }
 })
 

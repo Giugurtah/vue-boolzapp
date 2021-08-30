@@ -1,7 +1,10 @@
-/** Porzione dello stylesheet che contiene solo proprietà di colore e dimensione */
+/** Porzione dello stylesheet che contiene solo proprietà di colore, dimensione e posizionamento */
 /* Geberal properties */
 .zindex-1 {
     z-index: 1;
+}
+.translateY-100 {
+    transform: translateY(-100%);
 }
 /* color properties */
 .base_color {
@@ -21,6 +24,12 @@
 }
 .interaction_gray:hover {
     background-color: rgb( 235, 235, 235);
+}
+.red {
+    color: red;
+}
+.red_border {
+    border-color: red!important;
 }
 
 /* Font properties */
@@ -101,7 +110,9 @@ body {
     color: rgb(107, 115, 118);
     font-size: 20px;
 }
-
+.selectedMessage {
+    background-color: ;
+}
 /** Porzione dello stylesheet che contine le modifiche alle proprietà già presenti degli elementi bootstrap */
 .button_reset {
     display: none;
