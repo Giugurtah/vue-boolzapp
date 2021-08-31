@@ -30,7 +30,7 @@ var app = new Vue({
           return searchedContacts;
         }
       },
-      // Funzione che permette di inviare messaggi e riceverne uno generato automaticamnete
+      // Funzione che permette di inviare messaggi e riceverne uno generato automaticamnetes
       sendMessage(string) {
         //Invio messaggio
         dayjs.extend(dayjs_plugin_customParseFormat);
@@ -56,14 +56,19 @@ var app = new Vue({
           if(this.IsNotificationActive) {
             notificationSound.play();
           }
-        }, 1000);
+        }, 1500);
       },
       // Funzione che cancella un messaggio dala lista messaggi
       deleteMessage(index) {
         this.selectedContact.messages.splice(index, 1);
       },
-      //Funzione che controlla se un messaggio è stato selezionato o no
-      
+      // Funzione che gestisce lo stato dell'interlocutore
+      getLastMessageDate() {
+        const auxArray = this.selectedContact.messages.filter(message => message.status == 'received');
+        const lastMessage = auxArray[auxArray.length - 1];
+        const lastMessageDate = lastMessage.date.slice(10,16);
+        return lastMessageDate
+      }
     }
 })
 

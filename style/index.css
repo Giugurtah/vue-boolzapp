@@ -6,6 +6,7 @@
 .translateY-100 {
     transform: translateY(-100%);
 }
+
 /* color properties */
 .base_color {
     background-color: rgb(234, 234, 234);
@@ -92,7 +93,14 @@ body {
 .contacts {
     height: 400px;
 }
-
+.message_preview_display {
+    width: 200px;
+}
+.message_preview_display div {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
 /* Chat_display properties */
 .chat_display {
     height: 450px;
@@ -109,9 +117,6 @@ body {
 .messages i {
     color: rgb(107, 115, 118);
     font-size: 20px;
-}
-.selectedMessage {
-    background-color: ;
 }
 /** Porzione dello stylesheet che contine le modifiche alle proprietà già presenti degli elementi bootstrap */
 .button_reset {
