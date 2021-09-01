@@ -97,7 +97,7 @@
                     </div>
                 </section>
                 <!-- Section dedicata alla visualizzazione della chat --> 
-                <section class="chat_display overflow-scroll p-5" id="chat_display_id">
+                <section class="chat_display overflow-auto p-5" id="chat_display_id">
                     <div v-for="(message, index) in selectedContact.messages"  class="row">  
                         <div class="col-auto" :class="message.status == 'sent' ? 'ms-auto' : ''">
                             <div class="message p-2 rounded-3 mb-3 position-relative" :class="message.status == 'sent' ? 'sent_color' : 'received_color'">
